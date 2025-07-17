@@ -83,8 +83,11 @@ for i in range(len(chromosomes)):
         biosamples = variant_score.var['biosample_name']
 
         # Filters
-        filtered_genes = genes[(raw > 0.2).any(axis=1)]
-        top_genes = genes[(quant > 0.9).any(axis=1)]
+        filtered_mask = ((raw > 0.1) & (raw < 1)).any(axis=1)
+        filtered_genes = genes[filtered_mask]
+
+        top_mask = ((quant > -1) & (quant < 0.5)).any(axis=1)
+        top_genes = genes[top_mask]
 
         requested_output = variant_score.uns['variant_scorer'].requested_output.name
 
