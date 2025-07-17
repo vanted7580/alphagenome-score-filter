@@ -98,6 +98,7 @@ for i in range(len(chromosomes)):
             if biosamples.str.contains(keyword, case=False, na=False).any():
                 matched_keyword.append(keyword)
 
+        # print(", ".join(biosamples.tolist()))
         # if not matched_keyword: continue
 
         print(f"Matched keywords: {', '.join(matched_keyword)}")
@@ -112,3 +113,5 @@ for i in range(len(chromosomes)):
         print(f"Filtered genes (quantile_score): {len(top_genes)}")
 
         if not top_genes.empty: print("    ", ", ".join(top_genes))
+
+
