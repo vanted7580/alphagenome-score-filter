@@ -1,4 +1,4 @@
-#### Filter result by:
+#### Filter results by:
 
 ###### Keywords
 ```
